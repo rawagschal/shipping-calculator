@@ -8,6 +8,10 @@
 <!-- FUNCTIONALITY -->
 <?php
 
+$zip = $_POST['zip'];
+$weight= $_POST['weight'];
+$total = $_POST[''];
+
 ?>
 
 <!-- DISPLAY -->
@@ -24,7 +28,7 @@
         <input type='submit' name='submit' value='submit'>
 
         <!-- replace input w diff element-->
-        <input readonly='readonly' name='cost' value='cost'>
+        <input readonly='readonly' name='total' value='total'>
         
     </form>
 
