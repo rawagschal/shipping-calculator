@@ -1,35 +1,47 @@
-<!DOCTYPE html>
-
-<head>
-    <title>Shipping Calculator</title>
-</head>
-
-
 <!-- FUNCTIONALITY -->
 <?php
 
-$zip = $_POST['zip'];
-$weight= $_POST['weight'];
-$total = $_POST[''];
+function calculate($zip, $weight) {
+    if ($zip === 55555) {
+        return $weight * $weight - $weight + 1.25;
+    } else if ($zip === 55556) {
+        return $weight + .75;
+    }
+}
 
+if (isset($_POST['zip']) && isset($_POST['weight'])) {
+    $total = calculate(intval($_POST['zip']), intval($_POST['weight']));
+}
 ?>
 
 <!-- DISPLAY -->
+<html>
+<head>
+    <title>Shipping Calculator</title>
+</head>
 <body>
+
+
     <h1>Shipping Calculator</h1>
+
+        
     <form action='' method='post' id='shipping-form'>
         
-        <p> Zip Code </p>
-            <input type='int' name='zip' id='zip' required='required'/>
+        <p> Zip Code 
+            <input type='text' name='zip' id='zip' required='required'/>
+        </p>
             
-        <p> Weight (lbs) </p>
-            <input type='int' name='weight' id='weight' required='required'/>
+        <p> Weight (lbs)
+            <input type='text' name='weight' id='weight' required='required'/>
+        </p>
         
-        <input type='submit' name='submit' value='submit'>
-
-        <!-- replace input w diff element-->
-        <input readonly='readonly' name='total' value='total'>
+        <p>
+            <input type='submit'/>
+        </p>
         
-    </form>
+        <?php if (isset($total)) { ?>
+            <h2>Total Shipping Cost: $<?php echo $total ?></h2>
+        <?php } ?>
 
 </body>
+</html>
