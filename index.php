@@ -22,6 +22,7 @@ if (isset($_POST['zip']) && isset($_POST['weight'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Boostrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel='stylesheet' href='/index.css'>
 </head>
 <body>
 
@@ -34,7 +35,7 @@ if (isset($_POST['zip']) && isset($_POST['weight'])) {
                 <input type='text' class='form-control' name='zip' id='zip' required='required'/>
             <label for='weight'>Weight (lbs)</label>
                 <input type='text' class='form-control' name='weight' id='weight' required='required'/>                
-            <button type='submit' class='btn btn-primary'>Calculate</button>
+            <button type='submit' class='btn btn-secondary'>Calculate</button>
         </div>
             
         <?php if (isset($total)) { ?>
