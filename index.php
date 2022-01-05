@@ -20,27 +20,38 @@ if (isset($_POST['zip']) && isset($_POST['weight'])) {
     <title>Shipping Calculator</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel='stylesheet' href='index.css'>
 </head>
 <body>
-
-<div class='parent'>
-    <h1 class='cta'>Shipping Calculator</h1>
-        <h3 class='cta'> Please enter the following:</h3>
-
-    <form action='' method='post' id='shipping-form'>
-        <div class='form-group'>
-            <label for='zip'>Zip Code</label>
-                <input type='text' class='form-control' name='zip' id='zip' required='required'/>
-            <label for='weight'>Weight (lbs)</label>
-                <input type='text' class='form-control' name='weight' id='weight' required='required'/>                
-            <button type='submit' class='btn btn-secondary'>Calculate</button>
+    
+<section>
+        <div class='cta'>
+            <h1>Shipping Calculator</h1>
+            <h3>Please enter the following:</h3>
         </div>
-            
-        <?php if (isset($total)) { ?>
-            <h2>Total Shipping Cost: $
-                <?php echo $total ?>
-            </h2>
-        <?php }  ?>
-</div>
+
+        <form action='' method='post' id='shipping-form'>
+            <div class='input'>
+                <label for='zip'>Zip Code</label>
+                    <input type='text' name='zip' required='required'/>
+            </div>
+            <div class='input'>
+                <label for='weight'>Weight (lbs)</label>
+                    <input type='text' name='weight' required='required'/>                
+            </div>  
+            <div class='input'>
+              <button type='submit' class='btn btn-secondary'>Calculate</button>
+            </div>
+        </form>
+
+            <?php if (isset($total)) { ?>
+                <div id='output'>
+                    <h3>Total Shipping Cost: $
+                        <?php echo $total ?>
+                    </h3>
+                </div>
+            <?php }  ?>
+    </section>
+
 </body>
 </html>
